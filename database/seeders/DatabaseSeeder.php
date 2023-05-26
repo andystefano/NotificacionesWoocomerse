@@ -18,5 +18,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        //Para cargar contenido de prueba en tabla notificaciones
+        $this->call(NotificacionesSeeder::class);
+
+
     }
 }
