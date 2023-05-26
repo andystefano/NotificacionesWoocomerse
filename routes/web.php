@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NotificacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,9 @@ Route::get('/', function () {
 });
 
 
+//NotificacionController
+Route::get('/Listar', [NotificacionController::class,'index'])->name('listar');
 
-Route::get('/Listar', function () {
-    return view('listar');
-})->name('listar');
 
 
 Route::get('/Crear', function () {

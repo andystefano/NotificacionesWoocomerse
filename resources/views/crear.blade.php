@@ -1,3 +1,7 @@
 @extends("layouts/app")
 
-Crearrr
+@section('title','Crear Notificación')
+
+@section('content')
+crear 
+@endsection

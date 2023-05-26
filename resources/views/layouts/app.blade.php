@@ -12,9 +12,9 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
     <head>
         <meta charset="utf-8">
         <title>
-            Page Titile - category_1 - SmartAdmin v4.0.1
+            @yield('title')
         </title>
-        <meta name="description" content="Page Titile">
+        <meta name="description" content=" @yield('title')        ">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
         <!-- Call App Mode on ios devices -->
@@ -757,14 +757,9 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         </ol>
                         <div class="subheader">
                             <h1 class="subheader-title">
-                                <i class='subheader-icon fal fa-'></i> Page <span class='fw-300'>Title</span> <sup class='badge badge-primary fw-500'>ADDON</sup>
-                                <small>
-                                    blank description
-                                </small>
+                                @yield('title')
                             </h1>
-                            <div class="subheader-block">
-                                Right content of header
-                            </div>
+                            
                         </div>
                      
                         <div class="row">
@@ -772,7 +767,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 <div id="panel-1" class="panel">
                                     <div class="panel-hdr">
                                         <h2>
-                                            Panel <span class="fw-300"><i>Title</i></span>
+                                            @yield('title')
                                         </h2>
                                         <div class="panel-toolbar">
                                             <button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
