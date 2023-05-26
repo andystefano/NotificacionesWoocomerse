@@ -10,9 +10,11 @@ Listar
 
 @foreach ($Notificaciones as $notificacion)
 
-<h2>H2:{{$notificacion['nombre']}}</h2>
+<h2>H2:{{$notificacion->nombre}}</h2>
+<p>H2:{{$notificacion->contenido}}</p>
     
 @endforeach
+
 
 
 
