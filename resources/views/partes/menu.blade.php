@@ -30,7 +30,11 @@
         </a>
     </li>
     
-    
+    <li>
+        <a href="{{ route('testEmail'); }}" title="Analytics Dashboard" data-filter-tags="application intel analytics dashboard" class=" waves-effect waves-themed">
+            <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Test Email</span>
+        </a>
+    </li>   
 
     
       

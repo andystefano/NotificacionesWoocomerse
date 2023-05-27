@@ -23,8 +23,11 @@ Route::get('/', function () {
 Route::get('/Listar', [NotificacionController::class,'index'])->name('listar');
 
 
-
 Route::get('/Crear', function () {
     return view('crear');
 })->name('crear');
 
+
+Route::get('/testEmail', [NotificacionController::class,'FormTest'])->name('testEmail');
+
+ 
