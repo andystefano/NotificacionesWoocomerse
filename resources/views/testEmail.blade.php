@@ -5,17 +5,30 @@
 
 
 @section('content')
-testEmail
+ 
+<form>
+ 
+    <div class="form-group">
+        <label class="form-label">Seleccione Notificacion</label>
+        <select class="custom-select form-control">
+            <option selected="">Seleccione Item</option>
+            @foreach ($Notificaciones as $notificacion)
 
-
-<select>
-
-@foreach ($Notificaciones as $notificacion)
-
-<option value="{{$notificacion->id}}">{{$notificacion->nombre}}</option>
+            <option value="{{$notificacion->id}}">{{$notificacion->nombre}}</option>
+                
+            @endforeach
+            
     
-@endforeach
+             
+        </select>
+    </div>
 
-</select>
+    <div class="form-group">
+        <label class="form-label" for="example-email-2">Email</label>
+        <input type="email" id="example-email-2" name="example-email-2" class="form-control" placeholder="Email">
+    </div>   
+ 
+</form>
+
 
 @endsection
