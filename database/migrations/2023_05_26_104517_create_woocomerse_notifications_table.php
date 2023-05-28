@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
     
-        Schema::create('notificaciones', function (Blueprint $table) {
+        Schema::create('woocomerse_notificacion', function (Blueprint $table) {
             $table->id();
             $table->text('nombre')->nullable();
             $table->string('contenido', 5000)->nullable();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notificaciones');
+        Schema::dropIfExists('woocomerse_notificacion');
     }
 };

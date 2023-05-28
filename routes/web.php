@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NotificacionController;
+use App\Http\Controllers\WoocomerseNotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 //NotificacionController
-Route::get('/Listar', [NotificacionController::class,'index'])->name('listar');
+Route::get('/Listar', [WoocomerseNotificationController::class,'index'])->name('listar');
 
 
 Route::get('/Crear', function () {
@@ -28,6 +28,6 @@ Route::get('/Crear', function () {
 })->name('crear');
 
 
-Route::get('/testEmail', [NotificacionController::class,'FormTest'])->name('testEmail');
+Route::get('/testEmail', [WoocomerseNotificationController::class,'FormTest'])->name('testEmail');
 
  

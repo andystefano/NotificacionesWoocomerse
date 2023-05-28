@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         //Para cargar contenido de prueba en tabla notificaciones
-        $this->call(NotificacionesSeeder::class);
+        $this->call(WoocomerseNotificationsSeeder::class);
 
 
     }

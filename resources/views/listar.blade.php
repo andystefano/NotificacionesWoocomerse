@@ -8,7 +8,7 @@
 Listar 
 
 
-@foreach ($Notificaciones as $notificacion)
+@foreach ($Notifications as $notificacion)
 
 <h2>H2:{{$notificacion->nombre}}</h2>
 <p>H2:{{$notificacion->contenido}}</p>

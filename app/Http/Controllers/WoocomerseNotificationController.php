@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class NotificacionController extends Controller
+use App\Models\WoocomerseNotification;
+
+
+class WoocomerseNotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,9 +26,11 @@ class NotificacionController extends Controller
             ['nombre'=>'Vencido','contenido'=>'contenidooooo3','fecha'=>'2023-05-03']
         ];*/
 
-        $Notificaciones = DB::table('notificaciones')->get();
+       // $Notificaciones = DB::table('notificaciones')->get();
+        $Notifications = WoocomerseNotification::get();
 
-        return view('Listar',['Notificaciones'=>$Notificaciones]);
+
+        return view('Listar',['Notifications'=>$Notifications]);
         
 
     }
@@ -41,9 +46,9 @@ class NotificacionController extends Controller
             ['nombre'=>'Vencido','contenido'=>'contenidooooo3','fecha'=>'2023-05-03']
         ];*/
 
-        $Notificaciones = DB::table('notificaciones')->get();
+        $Notifications = WoocomerseNotification::get();
 
-        return view('testEmail',['Notificaciones'=>$Notificaciones]);
+        return view('testEmail',['Notifications'=>$Notifications]);
         
 
     }    

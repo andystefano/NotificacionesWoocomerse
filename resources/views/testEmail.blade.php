@@ -9,8 +9,8 @@ testEmail
 
 
 <select>
-
-@foreach ($Notificaciones as $notificacion)
+    
+@foreach ($Notifications as $notificacion)
 
 <option value="{{$notificacion->id}}">{{$notificacion->nombre}}</option>
     

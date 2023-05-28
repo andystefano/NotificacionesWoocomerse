@@ -7,14 +7,14 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class NotificacionesSeeder extends Seeder
+class WoocomerseNotificationsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('notificaciones')->insert([
+        DB::table('woocomerse_notificacion')->insert([
             [
                 'nombre' => 'Notificación 1',
                 'contenido' => 'Contenido de la notificación 1',
