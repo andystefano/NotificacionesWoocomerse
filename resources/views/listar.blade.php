@@ -5,17 +5,25 @@
 
 
 @section('content')
-Listar 
+ 
+<table class="table m-0">
 
-
+    <tr><th>Item</th><th>Accion</th>
 @foreach ($Notifications as $notificacion)
+ 
 
-<h2><a href="/Notificaciones/{{$notificacion->id}}">H2:{{$notificacion->nombre}}</a></h2>
-<p>H2:{{$notificacion->contenido}}</p>
+<tr><td><a href="/Notificaciones/{{$notificacion->id}}">{{$notificacion->nombre}}</a></td><td>
     
+    <a href="/Notificaciones/{{$notificacion->id}}/borrar/">Borrar</a>
+     | 
+    <a href="/Notificaciones/{{$notificacion->id}}/edit/">Editar</a>        
+    
+</td></tr>
+ 
+
 @endforeach
 
-
+</table>
 
 
 @endsection

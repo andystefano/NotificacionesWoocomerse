@@ -22,14 +22,23 @@ Route::get('/', function () {
 //NotificacionController
 Route::get('/Listar', [WoocomerseNotificationController::class,'index'])->name('listar');
 
+//editar
+Route::get('/Notificaciones/{WoocomerseNotificationId}/edit', [WoocomerseNotificationController::class,'edit']);
+
+Route::patch('/Notificaciones/{WoocomerseNotificationId}/edit', [WoocomerseNotificationController::class,'update'])->name('WoocomerseNotificationUpdate');
 
 //NotificacionController
 Route::get('/Notificaciones/{WoocomerseNotificationId}', [WoocomerseNotificationController::class,'show']);
 
 
+
 Route::get('/Crear', function () {
     return view('crear');
 })->name('crear');
+
+
+
+Route::post('/Crear', [WoocomerseNotificationController::class,'store'])->name('store');
 
 
 Route::get('/testEmail', [WoocomerseNotificationController::class,'FormTest'])->name('testEmail');

@@ -59,6 +59,8 @@ class WoocomerseNotificationController extends Controller
     public function create()
     {
         //
+
+
     }
 
     /**
@@ -67,6 +69,16 @@ class WoocomerseNotificationController extends Controller
     public function store(Request $request)
     {
         //
+        $Notification = new WoocomerseNotification();
+
+        $Notification->nombre = $request->input('nombre');
+        $Notification->contenido = $request->input('contenido');
+
+        $Notification->save();
+ 
+        return redirect('/Notificaciones/'.$Notification->id.'');
+    
+ 
     }
 
     /**
@@ -88,7 +100,11 @@ class WoocomerseNotificationController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $Notifications = WoocomerseNotification::findorfail($id);
+
+        return view('edit',['Notifications'=>$Notifications]);
+
+
     }
 
     /**
@@ -97,6 +113,30 @@ class WoocomerseNotificationController extends Controller
     public function update(Request $request, string $id)
     {
         //
+
+
+       // return "Edited  Post";
+       // return $request;
+      $Notifications = WoocomerseNotification::find($id);
+      $request->validate([
+        'nombre'=>['required','min:5'],
+        'contenido'=>['required','min:5'],]);
+
+        $Notifications->nombre = $request->input('nombre');
+
+        $Notifications->contenido = $request->input('contenido');
+        $Notifications->save();
+
+        session()->flash('status','Notifications actualizada');
+ 
+        return to_route('listar');
+        //return redirect('Notificaciones/'.$Notifications->id.'/edit?a=1');
+    
+
+ 
+
+
+
     }
 
     /**
