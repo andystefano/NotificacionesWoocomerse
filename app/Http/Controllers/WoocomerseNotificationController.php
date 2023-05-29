@@ -75,6 +75,12 @@ class WoocomerseNotificationController extends Controller
     public function show(string $id)
     {
         //
+
+        $Notifications = WoocomerseNotification::findorfail($id);
+
+        return view('showNotificaction',['Notifications'=>$Notifications]);
+
+       // return "post".$id;
     }
 
     /**

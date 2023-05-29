@@ -23,6 +23,10 @@ Route::get('/', function () {
 Route::get('/Listar', [WoocomerseNotificationController::class,'index'])->name('listar');
 
 
+//NotificacionController
+Route::get('/Notificaciones/{WoocomerseNotificationId}', [WoocomerseNotificationController::class,'show']);
+
+
 Route::get('/Crear', function () {
     return view('crear');
 })->name('crear');

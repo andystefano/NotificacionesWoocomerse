@@ -14,6 +14,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <title>
             @yield('title')
         </title>
+        <base href="/">
         <meta name="description" content=" @yield('title')        ">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
@@ -29,6 +30,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
         <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <!--<link rel="stylesheet" media="screen, print" href="css/your_styles.css">-->
+      
     </head>
     <body class="mod-bg-1 ">
         <!-- DOC: script to save and load page settings -->
