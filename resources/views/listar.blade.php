@@ -25,5 +25,6 @@
 
 </table>
 
+{{ $Notifications->links(); }}
 
 @endsection

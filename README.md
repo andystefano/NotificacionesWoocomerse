@@ -11,7 +11,7 @@
 
 Incluye practicas Laravel y pruebas en laravel 10.
 
-Esta el la versión 1
+Esta el la versión 1 y se versionara
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).

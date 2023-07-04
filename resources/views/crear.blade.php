@@ -5,13 +5,29 @@
 @section('content')
 <h1>Nombre Notificación </h1>
 
-<form method="POST">
+@if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form method="POST" enctype="multipart/form-data">
 
     @csrf
 
 <div class="form-group">
     <label class="form-label" for="nombre">Nombre Notificación</label>
     <input type="text" id="nombre" name="nombre" class="form-control">
+</div>
+
+
+<div class="form-group">
+    <label class="form-label" for="nombre">Imagen</label>
+    <input type="file" id="imagen" name="imagen" class="form-control">
 </div>
 
 

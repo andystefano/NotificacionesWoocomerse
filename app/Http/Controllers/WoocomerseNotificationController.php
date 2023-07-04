@@ -27,7 +27,10 @@ class WoocomerseNotificationController extends Controller
         ];*/
 
        // $Notificaciones = DB::table('notificaciones')->get();
-        $Notifications = WoocomerseNotification::get();
+//        $Notifications = WoocomerseNotification::get(); //funciona ok
+
+$Notifications = WoocomerseNotification::paginate(5);
+
 
 
         return view('Listar',['Notifications'=>$Notifications]);
@@ -69,15 +72,49 @@ class WoocomerseNotificationController extends Controller
     public function store(Request $request)
     {
         //
+
+
+
+
         $Notification = new WoocomerseNotification();
+
+
+
+        $rules = [
+            'nombre' => 'required|string|max:255',
+            'contenido' => 'required|string|min:6',
+            'imagen' => 'required|image|mimes:jpg,jpeg,png',
+        ];
+    
+        $validatedData = $request->validate($rules);
+
+        
 
         $Notification->nombre = $request->input('nombre');
         $Notification->contenido = $request->input('contenido');
 
-        $Notification->save();
+
+
+        if($validatedData){
+        
+            $Notification->save();
+
+        if($request->hasFile("imagen")){
+            $rutaDestino = "media/".$Notification->id;
+            $imagen = $request->file("imagen");
+           // $image_name = $imagen->getClientOriginalName();
+            
+            $image_name = "IP.".$request->imagen->extension();
+            $request->imagen->move($rutaDestino,$image_name);  
+            
+        }
+
+        }else{
+
+            
+        }
  
         return redirect('/Notificaciones/'.$Notification->id.'');
-    
  
     }
 
