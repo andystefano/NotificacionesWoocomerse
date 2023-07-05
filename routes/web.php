@@ -19,6 +19,11 @@ Route::get('/', function () {
 });
 
 
+ 
+
+Route::get('/testEnvio', [WoocomerseNotificationController::class,'testEnvio'])->name('testEnvio');
+
+
 //NotificacionController
 Route::get('/Listar', [WoocomerseNotificationController::class,'index'])->name('listar');
 

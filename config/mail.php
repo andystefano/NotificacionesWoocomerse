@@ -99,9 +99,13 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'notificaciones@andy.cl'),
+        'name' => env('MAIL_FROM_NAME', 'Notificaciones Andy'),
     ],
+
+
+    /*Esto es para que pase la verificación si el certificado esta expirado */
+   
 
     /*
     |--------------------------------------------------------------------------

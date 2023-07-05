@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 use App\Models\WoocomerseNotification;
 
+use App\Mail\WoocomerseNotificationMailable;
+use Illuminate\Support\Facades\Mail;
+
 
 class WoocomerseNotificationController extends Controller
 {
@@ -183,4 +186,24 @@ $Notifications = WoocomerseNotification::paginate(5);
     {
         //
     }
+
+    public function testEnvio()
+    {
+
+        $nombre = "Andy Hormazabal";
+
+        $correo = new WoocomerseNotificationMailable($nombre);
+
+        Mail::to("andy@andy.cl")->send($correo);
+
+      
+
+
+        return view('WoocomerseNotifications.testEnvio');
+
+      //  return view('WoocomerseNotification.testEnvio');
+        
+    }   
+
+
 }
